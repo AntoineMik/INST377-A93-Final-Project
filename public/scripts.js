@@ -37,6 +37,7 @@ async function mainThread()
   const suggestions = document.querySelector(".suggestions");
   if (textInput !== null) {
     console.log("I am here");
+    
   textInput.addEventListener("change", (evt) => {
     var typesearch = document.getElementById("textInput").getAttribute("placeholder");
         
@@ -64,7 +65,7 @@ function displayCoursesMatches(evt, data_to_search)
   console.log("I am here 3");
   const suggestions = document.querySelector(".suggestions");
   const value = evt.target.value;
-  console.log(value);
+  console.log(value);  
   const matchSearch = filterFunctionCourses(value, data_to_search);
   console.log(matchSearch);
   let html;
@@ -74,8 +75,8 @@ function displayCoursesMatches(evt, data_to_search)
     html = matchSearch.map(course => { 
      return `
       <li>
-      <h4 class= "courses" onclick = "makeCoursePage(this)">${course.department}${course.course_number}</h4>
-      <p class="category">Title: ${course.title}</p>
+      <h4 class= "courses">${course.department}${course.course_number}</h4>
+      <p class="ClassTitle">Title: ${course.title}</p>
       <p class="category">Credits: ${course.credits}</p>
       </li>
       `;
@@ -92,6 +93,43 @@ function displayCoursesMatches(evt, data_to_search)
   }
 
   suggestions.innerHTML = html;
+
+//Code to create new popup window when clicked
+var more = document.getElementsByClassName("courses");
+for (let i = 0; i < more.length; i++) {
+  more[i].onclick = function(e) {
+    const newpage = document.querySelector(".newpage");
+    mo=more[i].innerHTML;
+    var z = mo.match(/[\d\.]+|\D+/g);
+    console.log(z[1]);
+    var result = data_to_search.filter((SelectedCourse)=>(SelectedCourse.course_number == z[1]) && (SelectedCourse.department == z[0]));
+    const newhtml = result.map(course => { 
+      console.log(result);
+      
+     return `
+     <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+   <title>Group A93 Final Project</title>
+   </head>
+     <body>
+     <div class= "de">
+     <li>
+       <h4>${course.department}${course.course_number}</h4>
+       <p class="category">${course.title}</p>
+       <p class="category">${course.credits}</p>
+       <p class="category">${course.department}</p>
+       <p class="category">${course.professors}</p>
+     </li>
+      </div>
+       </body>`; 
+      
+    }).join('');
+    newpage.innerHTML=newhtml;
+   
+  }
+}
 }
 
 function displayProfessorsMatches(evt, data_to_search)
@@ -109,7 +147,7 @@ function displayProfessorsMatches(evt, data_to_search)
     html = matchSearch.map(prof => { 
      return `
       <li>
-      <h4 class= "courses" onclick = "makeProfessorPage(this)">${prof.name}</h4>
+      <h4 class= "profs">${prof.name}</h4>
       <p class="category">Other name: ${prof.slug}</p>
       </li>
       `;
@@ -125,7 +163,44 @@ function displayProfessorsMatches(evt, data_to_search)
     }
 
   suggestions.innerHTML = html;
+  
+  
+  //Code to create new popup window when clicked
+var more = document.getElementsByClassName("profs");
+for (let i = 0; i < more.length; i++) {
+  more[i].onclick = function(e) {
+    const newpage = document.querySelector(".newpage");
+    mo=more[i].innerHTML;
+    var result = data_to_search.filter((person)=>(person.name == mo));
+    const newhtml = result.map(prof => { 
+      console.log(result);
+      
+     return `
+     <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+   <title>Group A93 Final Project</title>
+   </head>
+     <body>
+     <div class= "de">
+     <li>
+       <h4>${prof.name}</h4>
+       <p class="category">${prof.courses}</p>
+     </li>
+      </div>
+       </body>`; 
+      
+    }).join('');
+    newpage.innerHTML=newhtml;
+   
+  }
 }
+  
+}
+
+
+
 
 function filterFunctionProfessors(string, teachers)
 {
