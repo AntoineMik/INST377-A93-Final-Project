@@ -162,3 +162,4 @@ function filterFunctionCourses(string, courses)
     return tomatch.match(regex)
   })
 }
+
