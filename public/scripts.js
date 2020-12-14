@@ -15,8 +15,6 @@ async function getDatafromserver()
           });
 }
 
-
-
 async function mainThread()
 {
   const rawdata = await getDatafromserver();
@@ -26,30 +24,35 @@ async function mainThread()
   for(let i = 0; i < rawdata.length - 2; i++){classes = classes.concat(rawdata[i]);}
 
   // prof data is the last ement of the returned array.
-  const teachers= rawdata[rawdata.length - 1];
+  const teachers = rawdata[rawdata.length - 1];
   console.log("Rawdata from server, ", rawdata.length);
   console.log(rawdata);
   console.log("classes", classes);
   console.log("teachers", teachers);
   
-  
   const textInput = document.querySelector("#textInput");
-  const suggestions = document.querySelector(".suggestions");
+  // Add even listener to switch search type
+  
   if (textInput !== null) {
     console.log("I am here");
-  textInput.addEventListener("change", (evt) => {
+    textInput.addEventListener("change", (evt) => {
     var typesearch = document.getElementById("textInput").getAttribute("placeholder");
-        
+    
+    const value = evt.target.value;
+    //const value = this.value;
     if(document.getElementById('course_search').checked)
     {
-      displayCoursesMatches(evt, classes);
+      let matchSearch = filterFunctionCourses(value, classes);
+      displayCoursesMatches(matchSearch);
       console.log(typesearch);
+      console.log("The value:"  + value);
       console.log("I am here 2");
     }
     
     if(document.getElementById('professor_search').checked)
     {
-      displayProfessorsMatches(evt, teachers); 
+      let matchSearch = filterFunctionProfessors(value, teachers);
+      displayProfessorsMatches(matchSearch); 
     }
 
   })
@@ -59,28 +62,36 @@ async function mainThread()
 mainThread().catch(err => {console.error(err)});
 
 
-function displayCoursesMatches(evt, data_to_search)
+async function displayCoursesMatches(matchSearch)
 {
   console.log("I am here 3");
+  //const value = evt.target.value;
+  //console.log(value);
   const suggestions = document.querySelector(".suggestions");
-  const value = evt.target.value;
-  console.log(value);
-  const matchSearch = filterFunctionCourses(value, data_to_search);
   console.log(matchSearch);
-  let html;
+  let html = "";
   //const matchProfessors = findMatches(value, teachers);
 
-  if (matchSearch.length != 0) {
-    html = matchSearch.map(course => { 
-     return `
+  if (matchSearch.length > 0) {
+    let i;
+    for(i = 0; i < matchSearch.length; i++)
+    {
+      
+      let course = matchSearch[i];
+      let courseName = course.department + course.course_number;
+      html = `
       <li>
-      <h4 class= "courses" onclick = "makeCoursePage(this)">${course.department}${course.course_number}</h4>
+      <h4 class= "courses" id = "${courseName}">${courseName}</h4>
       <p class="category">Title: ${course.title}</p>
       <p class="category">Credits: ${course.credits}</p>
       </li>
       `;
+
+      //suggestions.innerHTML = html;
+      document.getElementById("suggestions").insertAdjacentHTML('beforeend', html);
+      document.getElementById(courseName).addEventListener("click",makeCoursePage(course));
       
-    }).join("");
+    }
   }
   else {
     html = `
@@ -89,28 +100,29 @@ function displayCoursesMatches(evt, data_to_search)
           <p class="category">Check your search</p>
       </li>
       `;
+      suggestions.innerHTML = html;
   }
 
-  suggestions.innerHTML = html;
+  
 }
 
-function displayProfessorsMatches(evt, data_to_search)
+function displayProfessorsMatches(matchSearch)
 {
   console.log("I am here 3");
+  //const value = evt.target.value;
+  //console.log(value);
+  //const matchSearch = filterFunctionProfessors(value, data_to_search);
   const suggestions = document.querySelector(".suggestions");
-  const value = evt.target.value;
-  console.log(value);
-  const matchSearch = filterFunctionProfessors(value, data_to_search);
   console.log(matchSearch);
   let html;
   //const matchProfessors = findMatches(value, teachers);
 
-  if (matchSearch.length != 0) {
+  if (matchSearch.length > 0) {
     html = matchSearch.map(prof => { 
      return `
       <li>
-      <h4 class= "courses" onclick = "makeProfessorPage(this)">${prof.name}</h4>
-      <p class="category">Other name: ${prof.slug}</p>
+      <h4 class = "courses">${prof.name}</h4>
+      <p class = "category">Other name: ${prof.slug}</p>
       </li>
       `;
     }).join("");
@@ -125,7 +137,10 @@ function displayProfessorsMatches(evt, data_to_search)
     }
 
   suggestions.innerHTML = html;
+  
 }
+
+
 
 function filterFunctionProfessors(string, teachers)
 {
@@ -147,4 +162,3 @@ function filterFunctionCourses(string, courses)
     return tomatch.match(regex)
   })
 }
-
