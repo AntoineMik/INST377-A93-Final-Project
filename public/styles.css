@@ -123,19 +123,3 @@ button:hover {
 
 }
 
-.category{
-  background-color: rgb(255, 252, 104);
-  border: none;
-  color: #2a2a2a;
-  font-size: 15px;
-  text-align: center;
-  font-weight: 80;
-  padding: 0!important;
-  /*optional*/
-  font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  
-  }
-
