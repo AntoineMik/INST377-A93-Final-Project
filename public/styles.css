@@ -134,49 +134,56 @@ button:hover {
   }
 
   .de > h4 {
-  margin-left: auto;
- margin-right: auto;
- position: absolute;
- align-items: center;
- top:200px; 
- background: white;
- border-radius: 25px;
- display: inline-block;
- border: 2px solid #000000;
- padding: 20px;
- width: 550px;
- height: 150px;
+    background: white;
+    width: 500px;
+    width: 600px;
+    height: 150px;
+    color: #2a2a2a;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 80;
 
   }
 
   .category1{
- margin-left: auto;
- margin-right: auto;
- position: absolute;
- align-items: center;
- top:200px; 
- background: white;
- border-radius: 25px;
- display: inline-block;
- border: 2px solid #000000;
- padding: 20px;
- width: 550px;
- height: 150px;
+    background: white;
+    width: 500px;
+    width: 600px;
+    height: 150px;
+    color: #2a2a2a;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 80;
+ 
     }
   
    .category2{
-      margin-left: auto;
-      margin-right: auto;
-      position: absolute;
-      align-items: center;
-      top:200px; 
-      background: white;
-      border-radius: 25px;
-      display: inline-block;
-      border: 2px solid #000000;
-      padding: 20px;
-      width: 550px;
-      height: 150px;
+    background: white;
+    width: 500px;
+    width: 600px;
+    height: 150px;
+    color: #2a2a2a;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 80;
     }
     
 
