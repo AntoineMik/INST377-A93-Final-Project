@@ -124,7 +124,6 @@ button:hover {
 }
 
 .category{
-  background-color: gray;
   /*optional*/
   font-family: arial, sans-serif;
   /*input has OS specific font-family*/
@@ -135,12 +134,4 @@ button:hover {
   
   }
 
-  .de > .category{
-  /*optional*/
-  font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
-  color: rgb(151, 40, 40);
-  text-decoration: underline;
-  cursor: pointer;
 
-  }
