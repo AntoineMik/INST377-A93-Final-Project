@@ -52,7 +52,7 @@ function makeProfessorPage(prof)
         <body>
             <div class= "de">
             <li>
-                <h4>${prof.name}</h4>
+                <h5>${prof.name}</h5>
                 <p class="category2">Other name: ${prof.slug}</p>
                 <p class="category2">Courses: ${prof.courses}</p>
             </li>
