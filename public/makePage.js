@@ -20,10 +20,10 @@ function makeCoursePage(course)
             <div class= "de">
             <li>
                 <h4>${course.department}${course.course_number}</h4>
-                <p class="category">Title: ${course.title}</p>
-                <p class="category">Credit: ${course.credits}</p>
-                <p class="category">Department: ${course.department}</p>
-                <p class="category">Professors: ${course.professors}</p>
+                <p class="category1">Title: ${course.title}</p>
+                <p class="category1">Credit: ${course.credits}</p>
+                <p class="category1">Department: ${course.department}</p>
+                <p class="category1">Professors: ${course.professors}</p>
             </li>
             </div>
         </body>
