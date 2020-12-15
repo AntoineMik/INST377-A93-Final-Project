@@ -135,18 +135,16 @@ button:hover {
 
   .category1{
     background: white;
-    width: 500px;
+    width: 600px;
     height: 150px;
     color: #2a2a2a;
-    font-size: 40px;
-    font-weight: 80;
     /*optional*/
     font-family: arial, sans-serif;
     /*input has OS specific font-family*/
     color: rgb(0, 0, 0);
     cursor: pointer;
     color: #2a2a2a;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
     font-weight: 80;
     }
