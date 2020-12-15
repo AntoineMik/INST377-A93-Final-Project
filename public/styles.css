@@ -130,8 +130,27 @@ button:hover {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   cursor: pointer;
-  
-  
+   
   }
+
+  .category1{
+    color: #2a2a2a;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 80;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 80;
+    }
+     
+    
+
 
 
