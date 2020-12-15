@@ -133,10 +133,26 @@ button:hover {
    
   }
 
-  .category1{
+  .de > h4 {
   margin-left: auto;
-  margin-right: auto;
- position: relative;
+ margin-right: auto;
+ position: absolute;
+ align-items: center;
+ top:200px; 
+ background: white;
+ border-radius: 25px;
+ display: inline-block;
+ border: 2px solid #000000;
+ padding: 20px;
+ width: 550px;
+ height: 150px;
+
+  }
+
+  .category1{
+ margin-left: auto;
+ margin-right: auto;
+ position: absolute;
  align-items: center;
  top:200px; 
  background: white;
@@ -147,7 +163,21 @@ button:hover {
  width: 550px;
  height: 150px;
     }
-     
+  
+   .category2{
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      align-items: center;
+      top:200px; 
+      background: white;
+      border-radius: 25px;
+      display: inline-block;
+      border: 2px solid #000000;
+      padding: 20px;
+      width: 550px;
+      height: 150px;
+    }
     
 
 
