@@ -2,7 +2,6 @@
 
 function makeCoursePage(course)
 {
-    //const course = matchSearch[id];
     return function ()
     {
     var newhttp = window.open("");
@@ -31,13 +30,15 @@ function makeCoursePage(course)
     ` ;
     
     newhttp.document.write(content);
-    newhttp.document.close()
+    newhttp.document.close();
     }
 }
 
 
 function makeProfessorPage(prof)
 {
+    return function ()
+    {
     var newhttp = window.open("");
     
     var content = `
@@ -62,5 +63,6 @@ function makeProfessorPage(prof)
     
     
     newhttp.document.write(content);
-    newhttp.document.close()
+    newhttp.document.close();
+    }
 }
