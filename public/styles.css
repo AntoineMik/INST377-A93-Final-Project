@@ -168,6 +168,12 @@ button:hover {
     font-weight: 80;
  
     }
+     
+@media only screen and (max-width: 800px){
+  .container{
+    justify-content: center;
+  }
+}
   
    .category2{
     background: white;
