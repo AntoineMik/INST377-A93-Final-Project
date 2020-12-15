@@ -145,13 +145,73 @@ button:hover {
 }
 
 .category{
-  background: white!important;
-  padding: 0!important;
   /*optional*/
   font-family: arial, sans-serif;
   /*input has OS specific font-family*/
-  color: #069;
+  color: rgb(0, 0, 0);
   text-decoration: underline;
   cursor: pointer;
   
   }
+
+  .de > li > h4 {
+    background: white;
+    width: 500px;
+    width: 600px;
+    height: 150px;
+    color: #2a2a2a;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 80;
+  }
+
+  .category1{
+    background: white;
+    width: 500px;
+    width: 600px;
+    height: 150px;
+    color: #2a2a2a;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 80;
+ 
+    }
+     
+@media only screen and (max-width: 800px){
+  .container{
+    justify-content: center;
+  }
+}
+  
+   .category2{
+    background: white;
+    width: 500px;
+    width: 600px;
+    height: 150px;
+    color: #2a2a2a;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #2a2a2a;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 80;
+    }
+    
+
+
+
