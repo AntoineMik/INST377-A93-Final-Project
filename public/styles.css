@@ -2,23 +2,52 @@ body{
   background-color: rgb(255, 252, 104);
 }
 
+.container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+}
+
 h1 {
+
+flex-flow: row wrap;
+display: flex;
  color: #2a2a2a;
  font-size: 40px;
  text-align: center;
  font-weight: 80;
+ align-self: flex-end;
 }
 
+.header {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
 .header > img {
+ display: flex;
  width: 20%;
- height: 30%;
- left: 5px;
- right: 10px;
- position:absolute; 
- top:-30px; 
- left:0; 
+ height: auto;
 }
+
+.header > h1 {
+  display: flex;
+  align-self: stretch;
+  height: auto;
+  width: auto;
+ }
+
 
 #textInput {
  flex-wrap: wrap;
@@ -33,15 +62,39 @@ h1 {
  border-radius: 5px;
 }
 
-.search-bar > button{
- align-items: center;
- left: 955px;
- top:173px; 
- position:absolute; 
- border-radius: 50%;
- background-color: white;
+.search-bar{
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 8%;
+ }
 
+.search-bar > button{
+ background-color: white;
+ left: 955px;
+ top:173px;
+ border-radius: 50%;
 }
+
+.radio{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3%;
+}
+
+.radio1 {
+  align-self: center;
+  left: 405px;
+  top:173px;   
+}
+
+.radio2 {
+  align-self: center;
+  left: 430px;
+  top:173px; 
+}
+
 
 .courses {
 background: none!important;
@@ -91,38 +144,6 @@ button:hover {
  height: 150px;
 }
 
-.courseRadio {
-  align-items: center;
-  left: 405px;
-  top:173px; 
-  position:absolute; 
-  
-}
-
-.courseRadioLabel {
-  align-items: center;
-  left: 430px;
-  top:173px; 
-  position:absolute; 
-
-}
-
-.profRadio {
-  align-items: center;
-  left: 580px;
-  top:173px; 
-  position:absolute; 
-  
-}
-
-.profRadioLabel {
-  align-items: center;
-  left: 605px;
-  top:173px; 
-  position:absolute;
-
-}
-
 .category{
   /*optional*/
   font-family: arial, sans-serif;
@@ -130,7 +151,7 @@ button:hover {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   cursor: pointer;
-   
+  
   }
 
   .de > li > h4 {
@@ -148,7 +169,6 @@ button:hover {
     font-size: 20px;
     text-align: center;
     font-weight: 80;
-
   }
 
   .category1{
