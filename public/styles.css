@@ -163,7 +163,6 @@ button:hover {
     align-items: center;
     border: 2px solid #000000;
     left: 955px;
-    position:absolute; 
     /*optional*/
     font-family: arial, sans-serif;
     /*input has OS specific font-family*/
@@ -183,7 +182,6 @@ button:hover {
     color: #2a2a2a;
     align-items: center;
     border: 2px solid #000000;
-    position:absolute; 
     left: 955px;
     /*optional*/
     font-family: arial, sans-serif;
@@ -212,7 +210,6 @@ button:hover {
     align-items: center;
     border: 2px solid #000000;
     left: 955px;
-    position:absolute; 
     /*optional*/
     font-family: arial, sans-serif;
     /*input has OS specific font-family*/
