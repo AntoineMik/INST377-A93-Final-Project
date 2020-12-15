@@ -16,14 +16,16 @@ function makeCoursePage(course)
         <title>Group A93 Final Project ${course.department}${course.course_number} </title>
         </head>
         <body>
-            <div class= "de">
-            <li>
-                <h4>${course.department}${course.course_number}</h4>
-                <p class="category1">Title: ${course.title}</p>
-                <p class="category1">Credit: ${course.credits}</p>
-                <p class="category1">Department: ${course.department}</p>
-                <p class="category1">Professors: ${course.professors}</p>
-            </li>
+            <div class="wrapper">
+            <div class="container">
+                <div class= "de">
+                    <h4>${course.department}${course.course_number}</h4>
+                    <p class="category1">Title: ${course.title}</p>
+                    <p class="category1">Credit: ${course.credits}</p>
+                    <p class="category1">Department: ${course.department}</p>
+                    <p class="category1">Professors: ${course.professors}</p>
+                </div>
+            </div>
             </div>
         </body>
     </html>
@@ -50,12 +52,14 @@ function makeProfessorPage(prof)
         <title>Group A93 Final Project</title>
         </head>
         <body>
-            <div class= "de">
-            <li>
-                <h5>${prof.name}</h5>
-                <p class="category2">Other name: ${prof.slug}</p>
-                <p class="category2">Courses: ${prof.courses}</p>
-            </li>
+            <div class="wrapper">
+            <div class="container">
+                <div class= "de">
+                    <h4>${prof.name}</h4>
+                    <p class="category2">Other name: ${prof.slug}</p>
+                    <p class="category2">Courses: ${prof.courses}</p>
+                </div>
+            </div>
             </div>
         </body>
     </html>
