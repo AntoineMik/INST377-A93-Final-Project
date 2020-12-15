@@ -72,6 +72,7 @@ async function displayCoursesMatches(matchSearch)
   let html = "";
   //const matchProfessors = findMatches(value, teachers);
 
+  suggestions.innerHTML = html;
   if (matchSearch.length > 0) {
     let i;
     for(i = 0; i < matchSearch.length; i++)
@@ -87,8 +88,7 @@ async function displayCoursesMatches(matchSearch)
       </li>
       `;
 
-      //suggestions.innerHTML = html;
-      document.getElementById("suggestions").insertAdjacentHTML('beforeend', html);
+      suggestions.insertAdjacentHTML('beforeend', html);
       document.getElementById(courseName).addEventListener("click",makeCoursePage(course));
       
     }
@@ -102,7 +102,6 @@ async function displayCoursesMatches(matchSearch)
       `;
       suggestions.innerHTML = html;
   }
-
   
 }
 
@@ -114,18 +113,26 @@ function displayProfessorsMatches(matchSearch)
   //const matchSearch = filterFunctionProfessors(value, data_to_search);
   const suggestions = document.querySelector(".suggestions");
   console.log(matchSearch);
-  let html;
+  let html = "";
   //const matchProfessors = findMatches(value, teachers);
 
+  suggestions.innerHTML = html;
   if (matchSearch.length > 0) {
-    html = matchSearch.map(prof => { 
-     return `
+    let i;
+    for(i = 0; i < matchSearch.length; i++)
+    {
+      let prof = matchSearch[i];
+      let profName = prof.name;
+      html = `
       <li>
-      <h4 class = "courses">${prof.name}</h4>
+      <h4 class = "courses" id = "${prof.name}">${prof.name}</h4>
       <p class = "category">Other name: ${prof.slug}</p>
       </li>
       `;
-    }).join("");
+
+      suggestions.insertAdjacentHTML('beforeend', html);
+      document.getElementById(profName).addEventListener("click", makeProfessorPage(prof));
+    }
   }
   else {
     html = `
@@ -133,11 +140,10 @@ function displayProfessorsMatches(matchSearch)
           <h4 class="name">No results found</h4>
           <p class="category">Check your search</p>
       </li>
-      `;
+      `; 
+      suggestions.innerHTML = html;
     }
 
-  suggestions.innerHTML = html;
-  
 }
 
 
