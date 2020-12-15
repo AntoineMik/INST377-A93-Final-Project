@@ -81,6 +81,7 @@ button:hover {
  margin-right: auto;
  position: relative;
  align-items: center;
+ top:200px; 
  background: white;
  border-radius: 25px;
  display: inline-block;
@@ -122,4 +123,16 @@ button:hover {
 
 }
 
+.category{
+  background-color: rgb(255, 252, 104);
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+  
+  }
 
